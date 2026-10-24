@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+<title id="title">Typora Equation Preview — follow the math, keep your place</title>
+<desc id="desc">Feature illustration of equation-reference previews, display math formatting, and reusable native NOTE blocks. This is a diagram, not a screenshot.</desc>
+<defs><style>
+.ui { font-family: 'Segoe UI', Arial, sans-serif; }
+.code { font-family: Consolas, 'Courier New', monospace; }
+.math { font-family: 'Cambria Math', Cambria, Georgia, serif; font-style: italic; }
+</style></defs>
+<rect width="1280" height="640" fill="#f5f4ef"/>
+<rect x="0" y="0" width="1280" height="7" fill="#0969da"/>
+<g class="ui">
+<rect x="48" y="37" width="29" height="29" rx="7" fill="#172b3a"/>
+<text x="62.5" y="58" fill="white" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="23">T</text>
+<text x="90" y="59" font-size="20" font-weight="650" fill="#172b3a">Typora Equation Preview</text>
+<rect x="1028" y="39" width="204" height="28" rx="14" fill="#e3ecd9"/>
+<text x="1130" y="58" text-anchor="middle" fill="#34542e" font-size="12" font-weight="600">ZERO RUNTIME DEPENDENCIES</text>
+<text x="48" y="127" fill="#172b3a" font-size="46" font-weight="700" letter-spacing="-1.1">Follow the math. Keep your place.</text>
+<text x="50" y="166" fill="#536575" font-size="20">Less scrolling through derivations. Less rebuilding the same Markdown.</text>
+
+<rect x="48" y="205" width="378" height="330" rx="14" fill="#fff" stroke="#d7dfdf"/>
+<text x="70" y="237" fill="#0969da" font-size="12" font-weight="700" letter-spacing="1.2">01 / PREVIEW REFERENCES</text>
+<text x="70" y="272" fill="#172b3a" font-size="21" font-weight="650">See the equation, right here.</text>
+<text x="70" y="320" fill="#526575" font-size="17">Substitute</text>
+<rect x="153" y="296" width="65" height="34" rx="6" fill="#eaf3ff" stroke="#91baf0"/>
+<text x="185" y="320" text-anchor="middle" fill="#0969da" class="math" font-size="21">(1.6)</text>
+<text x="229" y="320" fill="#526575" font-size="17">into the next step.</text>
+<path d="M185 343l-10 12h20z" fill="#edf4fc" stroke="#b9cce4"/>
+<rect x="70" y="354" width="334" height="116" rx="9" fill="#edf4fc" stroke="#b9cce4"/>
+<text x="90" y="384" fill="#526575" font-size="11" font-weight="700" letter-spacing="1">EQUATION (1.6)</text>
+<text x="237" y="434" text-anchor="middle" fill="#172b3a" class="math" font-size="29">xₖ₊₁ = A xₖ + B uₖ</text>
+<text x="70" y="511" fill="#536575" font-size="14">Plain click to preview. Ctrl+click to jump.</text>
+
+<rect x="450" y="205" width="378" height="330" rx="14" fill="#fff" stroke="#d7dfdf"/>
+<text x="472" y="237" fill="#0969da" font-size="12" font-weight="700" letter-spacing="1.2">02 / FORMAT DISPLAY MATH</text>
+<text x="472" y="272" fill="#172b3a" font-size="21" font-weight="650">Give formulas their own space.</text>
+<rect x="472" y="297" width="334" height="44" rx="7" fill="#f3f4f5"/>
+<text x="492" y="325" class="code" fill="#596674" font-size="20">$$A = U Σ Vᵀ$$</text>
+<line x1="639" y1="353" x2="639" y2="373" stroke="#0969da" stroke-width="2"/>
+<path d="M633 368l6 6 6-6" fill="none" stroke="#0969da" stroke-width="2"/>
+<rect x="472" y="386" width="334" height="103" rx="7" fill="#f1f6fc" stroke="#c1d6ef"/>
+<text x="492" y="412" class="code" fill="#0969da" font-size="18">$$</text>
+<text x="639" y="447" class="math" fill="#172b3a" text-anchor="middle" font-size="29">A = U Σ Vᵀ</text>
+<text x="492" y="474" class="code" fill="#0969da" font-size="18">$$</text>
+<text x="472" y="515" fill="#536575" font-size="13">Standalone $$, \[ … \], \( … \) · lists included</text>
+
+<rect x="852" y="205" width="378" height="330" rx="14" fill="#fff" stroke="#d7dfdf"/>
+<text x="874" y="237" fill="#0969da" font-size="12" font-weight="700" letter-spacing="1.2">03 / ADD EXPLANATIONS</text>
+<text x="874" y="272" fill="#172b3a" font-size="21" font-weight="650">Add context. Keep the flow.</text>
+<line x1="874" y1="294" x2="1208" y2="294" stroke="#d8dfe6"/>
+<rect x="874" y="309" width="4" height="164" fill="#0969da"/>
+<circle cx="898" cy="328" r="8" fill="none" stroke="#0969da" stroke-width="1.8"/>
+<text x="898" y="333" fill="#0969da" font-size="14" text-anchor="middle" font-weight="700">i</text>
+<text x="916" y="336" fill="#0969da" font-size="23" font-weight="650">Note</text>
+<text x="893" y="373" fill="#172b3a" font-size="17" font-weight="650">Supplementary explanation</text>
+<text x="893" y="403" fill="#344a5c" font-size="16">Definitions, formulas and reasoning,</text>
+<text x="893" y="427" fill="#344a5c" font-size="16">right beside the main text.</text>
+<text x="1041" y="462" fill="#172b3a" text-anchor="middle" class="math" font-size="25">E = mc²</text>
+<line x1="874" y1="488" x2="1208" y2="488" stroke="#d8dfe6"/>
+<text x="874" y="515" fill="#536575" font-size="13">Wrap a selection or start from a template.</text>
+
+<text x="50" y="578" fill="#172b3a" font-size="18" font-weight="600">Also: batch heading demotion · one-step undo · a Plugin menu</text>
+<text x="50" y="611" fill="#667783" font-size="12">Feature illustration · Windows · Typora 1.14.9 validated</text>
+<text x="1230" y="611" text-anchor="end" fill="#526575" font-size="13">github.com/guan695/typora-equation-preview</text>
+</g>
+</svg>
