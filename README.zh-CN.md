@@ -8,7 +8,7 @@
 
 ![公式预览、公式块整理和补充说明三个功能的示意图](assets/overview.png)
 
-> 上图是功能示意图。实际样式随 Typora 主题变化；Plugin 是窗口内的顶部按钮。
+> 上图是功能示意图。实际样式随 Typora 主题变化；Plugin 位于底部状态栏左侧，紧挨源代码切换按钮，菜单向上展开。
 
 ## 适合什么场景
 
@@ -40,7 +40,7 @@
    powershell -NoProfile -ExecutionPolicy Bypass -File ".\install.ps1"
    ```
 
-4. 接受管理员提示，重新打开 Typora。窗口顶部右侧会出现 **Plugin** 按钮。
+4. 接受管理员提示，重新打开 Typora。底部状态栏左侧会出现 **Plugin** 按钮。若状态栏被隐藏，请在 **视图 → 显示状态栏** 中开启。
 
 若 Typora 安装在其他目录：
 

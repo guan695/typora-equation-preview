@@ -334,10 +334,13 @@
 
   function installPluginMenu() {
     if (root.document.getElementById("typora-plugin-menu-button")) return;
+    const sourceToggle = root.document.getElementById("toggle-sourceview-btn");
+    const statusbar = sourceToggle?.closest("footer");
+    if (!statusbar) return;
     const style = root.document.createElement("style");
     style.textContent = `
-      #typora-plugin-menu-button { position: fixed; top: 6px; right: 18px; z-index: 9998; -webkit-app-region: no-drag; padding: 3px 12px; border: 1px solid var(--border-color, #aaa); border-radius: 4px; color: var(--text-color, #333); background: var(--bg-color, #fff); font: 13px sans-serif; cursor: pointer; }
-      #typora-plugin-menu { inset: unset; margin: 0; padding: 14px; width: 350px; max-width: calc(100vw - 16px); max-height: 75vh; overflow: auto; box-sizing: border-box; border: 1px solid var(--border-color, #aaa); border-radius: 8px; color: var(--text-color, #333); background: var(--bg-color, #fff); box-shadow: 0 8px 28px #0003; font: 14px/1.6 sans-serif; }
+      #typora-plugin-menu-button { float: left; height: 24px; margin: 1px 4px; -webkit-app-region: no-drag; padding: 0 10px; border: 1px solid var(--border-color, #aaa); border-radius: 4px; color: var(--text-color, #333); background: var(--bg-color, #fff); font: 12px/22px sans-serif; cursor: pointer; }
+      #typora-plugin-menu { inset: unset; margin: 0; padding: 14px; width: 350px; max-width: calc(100vw - 16px); max-height: calc(100vh - 48px); overflow: auto; box-sizing: border-box; border: 1px solid var(--border-color, #aaa); border-radius: 8px; color: var(--text-color, #333); background: var(--bg-color, #fff); box-shadow: 0 8px 28px #0003; font: 14px/1.6 sans-serif; }
       #typora-plugin-menu h3 { margin: 0 0 10px; font-size: 16px; }
       #typora-plugin-menu button { display: block; width: 100%; text-align: left; padding: 7px 10px; border: 1px solid var(--border-color, #aaa); border-radius: 4px; color: inherit; background: transparent; cursor: pointer; font: inherit; }
       #typora-plugin-menu button:hover, #typora-plugin-menu button:focus-visible { background: var(--active-file-bg-color, #8882); }
@@ -368,25 +371,26 @@
       <p>先选中正文中的一段内容，将其中 H1–H5 标题降一级；H6 保留。可整批撤销。</p>
       <div class="plugin-feature">公式引用就地预览</div>
       <p>普通单击 \ref / \eqref 渲染出的公式编号即可预览；Ctrl+单击仍跳转。点击外面或 Esc 关闭。</p>`;
-    root.document.body.append(button, panel);
+    sourceToggle.after(button);
+    statusbar.removeAttribute("aria-hidden");
+    root.document.body.appendChild(panel);
     // Keep the editor selection when the menu is opened with the mouse.
     button.addEventListener("mousedown", event => event.preventDefault());
     panel.addEventListener("mousedown", event => { if (event.target.closest("button")) event.preventDefault(); });
-    function positionButton() {
-      const titlebar = root.document.getElementById("top-titlebar");
-      button.style.right = titlebar?.getBoundingClientRect().height ? "146px" : "18px";
+    function positionPanel() {
+      const rect = button.getBoundingClientRect();
+      panel.style.left = `${Math.max(8, Math.min(rect.left, root.innerWidth - panel.offsetWidth - 8))}px`;
+      panel.style.top = `${Math.max(8, rect.top - panel.offsetHeight - 6)}px`;
     }
-    positionButton();
-    root.addEventListener("resize", positionButton);
+    root.addEventListener("resize", () => {
+      if (panel.matches(":popover-open")) positionPanel();
+    });
     button.addEventListener("click", () => {
       if (panel.matches(":popover-open")) return panel.hidePopover();
-      positionButton();
       panel.style.left = "0px";
       panel.style.top = "0px";
       panel.showPopover();
-      const rect = button.getBoundingClientRect();
-      panel.style.left = `${Math.max(8, Math.min(rect.right - panel.offsetWidth, root.innerWidth - panel.offsetWidth - 8))}px`;
-      panel.style.top = `${rect.bottom + 6}px`;
+      positionPanel();
     });
     panel.addEventListener("toggle", () => button.setAttribute("aria-expanded", String(panel.matches(":popover-open"))));
     panel.addEventListener("click", event => {

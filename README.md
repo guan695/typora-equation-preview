@@ -12,7 +12,7 @@
 </p>
 
 ![Feature overview: equation-reference previews, display-math formatting, and NOTE callouts](assets/overview.png)
-<sub>Feature illustration. The Plugin entry is an in-window button; appearance follows your Typora theme.</sub>
+<sub>Feature illustration. The Plugin button sits beside the source-mode toggle on the bottom status bar; its menu opens upward. Appearance follows your Typora theme.</sub>
 
 Reading a derivation should not mean scrolling back and forth to find an equation. Writing a short explanation should not mean rebuilding a callout every time.
 
@@ -41,7 +41,7 @@ Display-math formatting and NOTE insertion also work in source mode. Each edit c
    powershell -NoProfile -ExecutionPolicy Bypass -File ".\install.ps1"
    ```
 
-4. Accept the administrator prompt and reopen Typora. Look for **Plugin** at the top right of the window.
+4. Accept the administrator prompt and reopen Typora. Look for **Plugin** beside the source-mode toggle on the bottom status bar. If the status bar is hidden, enable **View → Show Status Bar**.
 
 For a custom installation location:
 

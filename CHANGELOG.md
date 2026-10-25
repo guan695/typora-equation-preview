@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Move the Plugin button beside the source-mode toggle on the bottom status bar so it no longer covers search results or controls. Open the menu upward and keep it within the window.
+
+修复：Plugin 移到底部状态栏左侧，不再遮挡搜索信息，功能菜单向上展开。
+
 ## 0.2.0 — 2026-10-24
 
 - Add an in-window Plugin menu describing all four tools.

@@ -126,19 +126,25 @@ assert.equal(syncs, 3);
 
 // Check that startup exposes the menu and its math action reaches the editor.
 const elements = new Map();
+const statusbar = { removeAttribute() {} };
+const sourceToggle = {
+  closest: () => statusbar,
+  after(button) { button.parentElement = statusbar; append(button); },
+};
+elements.set("toggle-sourceview-btn", sourceToggle);
 const append = (...items) => items.forEach(item => { if (item.id) elements.set(item.id, item); });
 document.head = { appendChild: append };
 document.body.append = append;
 document.body.appendChild = append;
 document.getElementById = id => elements.get(id);
 document.createElement = () => ({
-  style: {}, attributes: {}, listeners: {}, offsetWidth: 350,
+  style: {}, attributes: {}, listeners: {}, offsetWidth: 350, offsetHeight: 300,
   setAttribute(name, value) { this.attributes[name] = value; },
   addEventListener(name, callback) { this.listeners[name] = callback; },
   matches() { return Boolean(this.open); },
   showPopover() { this.open = true; this.listeners.toggle?.(); },
   hidePopover() { this.open = false; this.listeners.toggle?.(); },
-  getBoundingClientRect: () => ({ right: 780, bottom: 30 }),
+  getBoundingClientRect: () => ({ left: 40, top: 570, right: 110, bottom: 594 }),
   remove() { elements.delete(this.id); },
 });
 window.innerWidth = 800;
@@ -146,9 +152,12 @@ onReady();
 const menuButton = elements.get("typora-plugin-menu-button");
 const menu = elements.get("typora-plugin-menu");
 assert.equal(menuButton.textContent, "Plugin");
+assert.equal(menuButton.parentElement, statusbar);
 assert.ok(menu.innerHTML.includes(String.raw`\( … \)`));
 menuButton.listeners.click();
 assert.equal(menu.open, true);
+assert.equal(menu.style.left, "40px");
+assert.equal(menu.style.top, "264px");
 assert.equal(menuButton.attributes["aria-expanded"], "true");
 let prevented = false;
 menuButton.listeners.mousedown({ preventDefault: () => { prevented = true; } });
